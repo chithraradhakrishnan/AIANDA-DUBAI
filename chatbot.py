@@ -4,6 +4,7 @@ from transformers import pipeline
 from gtts import gTTS
 import os
 import nest_asyncio
+IS_CLOUD = os.environ.get('IS_STREAMLIT_CLOUD', False)
 
 # Apply nest_asyncio to handle async conflicts
 nest_asyncio.apply()
@@ -86,7 +87,9 @@ if "user_input" not in st.session_state:
     st.session_state.user_input = ""
 
 # Input methods
-input_method = st.radio("Input method:", ("Type", "Speak"), horizontal=True)
+
+input_method = "Type" if IS_CLOUD else st.radio(...)
+
 
 if input_method == "Speak":
     if st.button("🎤 Start Recording"):
