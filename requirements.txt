@@ -1,7 +1,7 @@
 streamlit==1.31.0
 speechrecognition==3.10.0
 transformers==4.38.2
-torch==2.1.2
+torch==2.2.2  # Updated to a compatible version
 gTTS==2.4.0
 pydub==0.25.1
 nest-asyncio==1.6.0
